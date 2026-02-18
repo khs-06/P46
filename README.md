@@ -28,8 +28,3 @@ Built using PHP & MySQL with a clean admin panel and responsive UI.
 ```
 http://localhost/P46/FindBrick-Smart-Real-EState
 ```
-
-## 📌 Description (for GitHub repo)
-
-Smart Real Estate Management System built with PHP & MySQL.
-Users can browse properties while admin manages listings through a dashboard. Designed as a full-stack portfolio and college major project.
