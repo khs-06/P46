@@ -1,0 +1,10 @@
+/* Show dropdown on hover for Bootstrap 4 navbar */
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* Optional: removes gap */
+}
+
+.navbar .dropdown-menu {
+    margin-top: 0;
+}

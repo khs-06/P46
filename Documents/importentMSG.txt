@@ -1,0 +1,108 @@
+Hi 
+i am Rumit Solanki,
+
+Please set up SMTP on our local server so we can 
+enable email sending (like registration confirmations 
+and password resets) from the site.
+
+
+🧩 Step-by-Step Setup for SMTP in Local Server (XAMPP/WAMP)
+
+🥇 Step 1: Locate the Configuration Files
+
+Find these two files inside your XAMPP/WAMP installation directory:
+
+C:\xampp\php\php.ini
+
+C:\xampp\sendmail\sendmail.ini
+
+(If you’re using WAMP, paths will be similar — C:\wamp64\bin\php\php8.x.x\php.ini)
+
+🥈 Step 2: Edit the php.ini File
+
+Open the php.ini file in Notepad (Run as Administrator).
+
+Search for these lines and uncomment + update them as follows:
+
+[mail function]
+; For Win32 only.
+SMTP = smtp.gmail.com
+smtp_port = 587
+
+; For Win32 only.
+sendmail_from = your_email@gmail.com
+sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
+
+
+💡 Tip: Remove the leading semicolons (;) to uncomment the lines.
+
+🥉 Step 3: Edit the sendmail.ini File
+
+Now open:
+
+C:\xampp\sendmail\sendmail.ini
+
+
+Find and update these settings:
+
+[sendmail]
+
+smtp_server = smtp.gmail.com
+smtp_port = 587
+smtp_ssl = tls
+auth_username = your_email@gmail.com
+auth_password = your_app_password
+force_sender = your_email@gmail.com
+
+
+⚠️ Important:
+
+Do not use your Gmail password directly — use an App Password instead.
+Generate it here: https://myaccount.google.com/apppasswords
+
+🧪 Step 4: Restart Apache Server
+
+After editing both files:
+
+Open XAMPP Control Panel
+
+Click Stop and then Start on Apache
+
+This reloads the new mail configuration.
+
+🧩 Step 5: Test the Email Function
+
+Create a test file — testmail.php — in your htdocs folder:
+
+<?php
+$to = "receiver@example.com";
+$subject = "SMTP Test Mail";
+$message = "This is a test email sent from local server using PHP SMTP.";
+$headers = "From: your_email@gmail.com";
+
+if (mail($to, $subject, $message, $headers)) {
+    echo "Mail sent successfully!";
+} else {
+    echo "Mail sending failed.";
+}
+?>
+
+
+Then run in browser:
+
+http://localhost/testmail.php
+
+🧭 Step 6: Check the Result
+
+If successful: You’ll see “Mail sent successfully!” and receive the email.
+
+If not: Check your XAMPP/sendmail/error.log for troubleshooting info.
+
+✅ Summary Checklist
+
+File	Setting	Example
+php.ini	SMTP host	smtp.gmail.com
+php.ini	Port	587
+sendmail.ini	Username	your_email@gmail.com
+sendmail.ini	Password	App Password
+sendmail.ini	SSL/TLS	tls

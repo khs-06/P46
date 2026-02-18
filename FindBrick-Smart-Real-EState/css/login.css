@@ -1,0 +1,102 @@
+/* Common styles for login and register */
+
+/* Background image helper (use with body.bg-url) */
+.bg-url {
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat !important; */
+}
+
+/* Shared container styles */
+.login-container {
+  max-width: 440px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: rgb(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+}
+
+.login-container:hover, .register-container:hover, .otp-container:hover {
+    background: rgb(255, 255, 255, 0.9) !important;
+
+}
+.register-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: rgb(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+}
+
+.otp-container {
+  max-width: 440px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: rgb(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+}
+
+.login-container:hover , .register-container:hover {
+    box-shadow: 0 0 20px 2px #7fc6e2 !important;
+}
+
+/* Titles */
+.login-title {
+  font-weight: 600;
+  color: #232946;
+  margin-bottom: 1.5rem;
+}
+
+/* Form controls */
+/* .form-control:focus {
+  border-color: #ff8906;
+  box-shadow: 0 0 0 0.2rem rgba(255,137,6,0.12);
+} */
+
+/* Buttons */
+.btn-login {
+  background: #ff8906;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-login:hover {
+  background: #232946;
+  color: #ff8906;
+}
+
+/* Links */
+.form-link {
+  font-size: 0.97rem;
+  color: #ff8906;
+}
+.form-link:hover {
+  color: #232946;
+  text-decoration: underline;
+}
+
+/* Alerts */
+.alert { font-size: 0.98rem; }
+
+/* Validation feedback */
+.invalid-feedback { display: block; }
+
+/* File input prettify for register */
+input[type="file"].form-control-file {
+  font-size: 0.97em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .login-container, .register-container {
+    padding: 1.2rem 0.8rem;
+    max-width: 97vw;
+  }
+  .register-container , .login-container {
+    max-width: 70vw;
+  }
+}
